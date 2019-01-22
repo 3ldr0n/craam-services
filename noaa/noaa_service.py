@@ -1,4 +1,4 @@
-from noaareport import NoaaReport
+from noaareport import NoaaReport, NoEventReports
 
 from flask import Blueprint, Response, request, jsonify
 
@@ -28,5 +28,7 @@ def get_data():
     try:
         noaa.get_dataframe()
         return Response(noaa.df.to_json(), mimetype="application/json")
+    except NoEventReports:
+        return jsonify({"message": "No event reports."})
     except FileNotFoundError:
         return jsonify({"message": "File not found."}), 500
