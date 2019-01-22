@@ -1,10 +1,10 @@
-FROM ubuntu:latest
+FROM python:3.7-slim
 
-RUN apt-get update -y
-RUN apt-get install -y python3-pip python3-dev python3-tk build-essential
+WORKDIR /rstn_service
+COPY . /rstn_service
 
-ADD . /code
-WORKDIR /code
-RUN pip3 install flask gunicorn wget numpy matplotlib pandas getrstn
+RUN pip install flask gunicorn getrstn
 
-CMD ["gunicorn", "-w", "4", "app:app", "-b", "0.0.0.0:5000"]
+EXPOSE 80
+
+CMD ["gunicorn", "-w", "4", "app:app", "-b", "0.0.0.0:80"]

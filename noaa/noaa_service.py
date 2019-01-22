@@ -4,12 +4,12 @@ from flask import Blueprint, Response, request, jsonify
 
 from utils import check_date
 
-noaa_page = Blueprint("NOAA_report", __name__)
+noaa_page = Blueprint("noaa_report", __name__)
 
 
 @noaa_page.route("/", methods=["GET"])
 def index():
-    data = {"message": "NOAA solar data"}
+    data = {"message": "NOAA solar reports"}
     return jsonify(data)
 
 
@@ -26,7 +26,7 @@ def get_data():
     path = "reports/" + year + "_events/"
     noaa = NoaaReport(year, month, day, path)
     try:
-        noaa.set_final_data()
+        noaa.get_dataframe()
         return Response(noaa.df.to_json(), mimetype="application/json")
     except FileNotFoundError:
         return jsonify({"message": "File not found."}), 500
