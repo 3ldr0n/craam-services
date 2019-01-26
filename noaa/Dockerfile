@@ -1,9 +1,9 @@
 FROM python:3.7-slim
 
+RUN pip install flask gunicorn noaareport
+
 WORKDIR /noaa_service
 COPY . /noaa_service
-
-RUN pip install flask gunicorn noaareport
 
 EXPOSE 80
 

@@ -6,7 +6,7 @@ from sunpy.net import Fido, attrs
 
 from utils import get_correct_goes_index
 
-goes_page = Blueprint("GOES", __name__)
+goes_page = Blueprint("goes", __name__)
 
 
 @goes_page.route("/", methods=["GET"])

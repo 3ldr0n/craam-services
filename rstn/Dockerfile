@@ -1,9 +1,9 @@
 FROM python:3.7-slim
 
+RUN pip install flask gunicorn getrstn
+
 WORKDIR /rstn_service
 COPY . /rstn_service
-
-RUN pip install flask gunicorn getrstn
 
 EXPOSE 80
 

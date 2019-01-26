@@ -4,7 +4,7 @@ from flask import Blueprint, Response, request, jsonify
 
 from utils import check_date
 
-rstn_page = Blueprint("RSTN", __name__)
+rstn_page = Blueprint("rstn", __name__)
 
 
 @rstn_page.route("/", methods=["GET"])
