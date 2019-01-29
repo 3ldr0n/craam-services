@@ -25,7 +25,8 @@ def rstn_data():
 
     path = "data"
     rstn = GetRSTN(day, month, year, path)
-    rstn.decompress_file(download=True)
+    rstn.download_file()
+    rstn.decompress_file()
     try:
         rstn_data = rstn.create_dataframe()
         rstn_data.index = rstn_data.index.map(lambda x: str(x))
