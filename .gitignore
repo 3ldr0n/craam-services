@@ -4,6 +4,7 @@
 *.phf
 *.PHF
 *.tar*
+*_events/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
