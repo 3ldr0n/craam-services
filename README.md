@@ -12,7 +12,7 @@ Microsserviços feitos para o CRAAM.
 
 *  **Parâmetros**
 
-   **Required:**
+   **Obrigatórios:**
  
    `begin=[datetime]`
    `end=[datetime]`
@@ -54,7 +54,7 @@ Microsserviços feitos para o CRAAM.
 
 *  **Parâmetros**
 
-   **Required:**
+   **Obrigatórios:**
  
    `day=[int]`
    `month=[int]`
@@ -97,7 +97,7 @@ Microsserviços feitos para o CRAAM.
 
 *  **Parâmetros**
 
-   **Required:**
+   **Obrigatórios:**
  
    `begin=[datetime]`
    `end=[datetime]`
