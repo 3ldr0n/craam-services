@@ -56,8 +56,8 @@ Microsserviços feitos para o CRAAM.
 
    **Obrigatórios:**
  
-   `day=[int]`
-   `month=[int]`
+   `day=[int]` <br />
+   `month=[int]` <br />
    `year=[int]`
 
 * **Resposta de sucesso:**
@@ -99,8 +99,9 @@ Microsserviços feitos para o CRAAM.
 
    **Obrigatórios:**
  
-   `begin=[datetime]`
-   `end=[datetime]`
+   `day=[int]` <br />
+   `month=[int]`<br />
+   `year=[int]`
 
 * **Resposta de sucesso:**
   
