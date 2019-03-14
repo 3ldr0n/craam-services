@@ -29,6 +29,6 @@ def get_data():
         noaa.get_dataframe()
         return Response(noaa.df.to_json(), mimetype="application/json")
     except NoEventReports:
-        return jsonify({"message": "No event reports."})
+        return jsonify({"message": "No event reports."}), 500
     except FileNotFoundError:
         return jsonify({"message": "File not found."}), 500

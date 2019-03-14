@@ -20,7 +20,25 @@ Microsserviços feitos para o CRAAM.
 * **Resposta de sucesso:**
   
   * **Status:** 200 <br />
-    **Conteúdo:** `{ "" : "" }`
+    **Conteúdo:**
+	```json
+	{
+	  "xrsa" : {
+	    "time_begin": "value",
+		.
+		.
+		.
+	    "time_end": "value",
+	  },
+	  "xrsb" : {
+	    "time_begin": "value",
+		.
+		.
+		.
+		"time_end": value
+	  }
+	}
+	```
  
 * **Resposta de erro:**
 
@@ -46,25 +64,7 @@ Microsserviços feitos para o CRAAM.
 * **Resposta de sucesso:**
   
   * **Status:** 200 <br />
-    **Conteúdo:**
-	```json
-	{
-	  "xrsa" : {
-	    "time_begin": "value",
-		.
-		.
-		.
-	    "time_end": "value",
-	  },
-	  "xrsb" : {
-	    "time_begin": "value",
-		.
-		.
-		.
-		"time_end": value
-	  }
-	}
-	```
+    **Conteúdo:** `{ "" : "" }`
  
 * **Resposta de erro:**
 
