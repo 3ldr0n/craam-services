@@ -106,7 +106,19 @@ Microsserviços feitos para o CRAAM.
   
   * **Status:** 200 <br />
     **Conteúdo:**
-	```json
+	```json	
+	{
+	  "f245": {
+	    "time": "value",
+	    "...": "...",
+	  },
+	  "f410": {…},
+	  "f610": {…},
+	  "f1415": {…},
+	  "f2695": {…},
+	  "f4995": {…},
+	  "f8800": {…},
+	  "f15400": {…}
 	```
  
 * **Resposta de erro:**
