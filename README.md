@@ -39,7 +39,10 @@ Microsserviços feitos para o CRAAM.
 * **Resposta de erro:**
 
   * **Status:** 400 <br />
-    **Conteúdo:** `{ message : "Date error" }`
+    **Conteúdo:**
+	```json
+	{ message : "Date error" }
+	```
 
 ## NOAA
 
@@ -60,18 +63,29 @@ Microsserviços feitos para o CRAAM.
 * **Resposta de sucesso:**
   
   * **Status:** 200 <br />
-    **Conteúdo:** `{ "" : "" }`
+    **Conteúdo:** 
+	```json
+	```
  
 * **Resposta de erro:**
 
   * **Status:** 500 <br />
-    **Conteúdo:** `{ message : "File not found" }`
+    **Conteúdo:**
+	```json
+	{ message : "File not found" }
+	```
 	
   * **Status:** 500 <br />
-    **Conteúdo:** `{ message : "No event reports" }`
+    **Conteúdo:**
+	```json
+	{ message : "No event reports" }
+	```
 	
   * **Status:** 400 <br />
-    **Conteúdo:** `{ message : "Impossible date" }`
+    **Conteúdo:**
+	```json
+	{ message : "Impossible date" }
+	```
 
 ## RSTN
 
@@ -91,9 +105,20 @@ Microsserviços feitos para o CRAAM.
 * **Resposta de sucesso:**
   
   * **Status:** 200 <br />
-    **Conteúdo:** `{ "" : "" }`
+    **Conteúdo:**
+	```json
+	```
  
 * **Resposta de erro:**
 
   * **Status:** 400 <br />
-    **Conteúdo:** `{ message : "Date error" }`
+    **Conteúdo:** 
+	```json
+	{ message : "Impossible date" }
+	```
+	
+  * **Status:** 500 <br />
+    **Conteúdo:**
+	```json
+	{ message : "Internal error" }
+	```
