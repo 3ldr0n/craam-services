@@ -25,17 +25,13 @@ Microsserviços feitos para o CRAAM.
 	{
 	  "xrsa" : {
 	    "time_begin": "value",
-		.
-		.
-		.
+	    ...
 	    "time_end": "value",
 	  },
 	  "xrsb" : {
 	    "time_begin": "value",
-		.
-		.
-		.
-		"time_end": value
+	    ...
+	    "time_end": "value"
 	  }
 	}
 	```
