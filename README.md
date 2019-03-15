@@ -14,7 +14,7 @@ Microsserviços feitos para o CRAAM.
 
    **Obrigatórios:**
  
-   `begin=[datetime]`
+   `begin=[datetime]` <br />
    `end=[datetime]`
 
 * **Resposta de sucesso:**
@@ -25,12 +25,12 @@ Microsserviços feitos para o CRAAM.
 	{
 	  "xrsa" : {
 	    "time_begin": "value",
-	    ...
+	    "...": "...",
 	    "time_end": "value",
 	  },
 	  "xrsb" : {
 	    "time_begin": "value",
-	    ...
+	    "...": "...",
 	    "time_end": "value"
 	  }
 	}
@@ -65,6 +65,22 @@ Microsserviços feitos para o CRAAM.
   * **Status:** 200 <br />
     **Conteúdo:** 
 	```json
+	{
+	  "event": {
+	    "first_index": "value",
+	    "...": "...",
+	    "last_index": "value",
+	  },
+	  "begin": {"..."},
+	  "max": {"..."},
+	  "end": {"..."},
+	  "obs": {"..."},
+	  "Q": {"..."},
+	  "type": {"..."},
+	  "loc/frq": {"..."},
+	  "particulars": {"..."},
+	  "reg": {"..."}
+	}
 	```
  
 * **Resposta de erro:**
@@ -113,13 +129,13 @@ Microsserviços feitos para o CRAAM.
 	    "time": "value",
 	    "...": "...",
 	  },
-	  "f410": {…},
-	  "f610": {…},
-	  "f1415": {…},
-	  "f2695": {…},
-	  "f4995": {…},
-	  "f8800": {…},
-	  "f15400": {…}
+	  "f410": {"..."},
+	  "f610": {"..."},
+	  "f1415": {"..."},
+	  "f2695": {"..."},
+	  "f4995": {"..."},
+	  "f8800": {"..."},
+	  "f15400": {"..."}
 	```
  
 * **Resposta de erro:**
