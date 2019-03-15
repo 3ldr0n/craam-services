@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/env bash
 
 for i in $(seq 1996 2017); do
     year="$i"
@@ -7,4 +7,5 @@ for i in $(seq 1996 2017); do
     url="ftp://ftp.swpc.noaa.gov/pub/warehouse/$year/$filename"
     wget $url
     tar xf $filename
+    rm $filename
 done
