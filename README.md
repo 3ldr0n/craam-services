@@ -10,7 +10,7 @@ Microsserviços feitos para o CRAAM.
 
 * **Método:** `GET`
 
-*  **Parâmetros**
+* **Parâmetros**
 
    **Obrigatórios:**
  
@@ -52,13 +52,14 @@ Microsserviços feitos para o CRAAM.
 
 * **Método:** `GET`
 
-*  **Parâmetros**
+* **Parâmetros**
 
    **Obrigatórios:**
  
    `day=[int]` <br />
    `month=[int]` <br />
-   `year=[int]`
+   `year=[int]` <br />
+   `stations=[string]`
 
 * **Resposta de sucesso:**
   
@@ -111,7 +112,7 @@ Microsserviços feitos para o CRAAM.
 
 * **Método:** `GET`
 
-*  **Parâmetros**
+* **Parâmetros**
 
    **Obrigatórios:**
  
