@@ -59,7 +59,7 @@ Microsserviços feitos para o CRAAM.
    `day=[int]` <br />
    `month=[int]` <br />
    `year=[int]` <br />
-   `stations=[string]`
+   `station=[string]`
 
 * **Resposta de sucesso:**
   
