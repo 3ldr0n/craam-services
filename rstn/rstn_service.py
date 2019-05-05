@@ -1,4 +1,5 @@
-from getrstn import GetRSTN
+from rstnpy import RSTN
+from rstnpy.exceptions import FileNotFoundOnServerError
 
 from flask import Blueprint, Response, request, jsonify
 
@@ -15,18 +16,24 @@ def index():
 
 @rstn_page.route("/get_data", methods=["GET"])
 def rstn_data():
-    day = request.args["day"]
-    month = request.args["month"]
     year = request.args["year"]
+    month = request.args["month"]
+    day = request.args["day"]
+    station = request.args["station"]
 
     if not check_date(year, month, day):
         msg = {"message": "Impossible date"}
         return jsonify(msg), 400
 
     path = "data"
-    rstn = GetRSTN(day, month, year, path)
-    rstn.download_file()
-    rstn.decompress_file()
+    rstn = RSTN(year, month, day, path, station)
+    try:
+        filename = rstn.downloader.download_file()
+    except FileNotFoundOnServerError:
+        msg = {"message": "File does not exist"}
+        return jsonify(msg), 400
+
+    filename = rstn.decompress_file(filename)
     try:
         rstn_data = rstn.create_dataframe()
         rstn_data.index = rstn_data.index.map(lambda x: str(x))

@@ -1,6 +1,6 @@
 FROM python:3.7-slim
 
-RUN pip install flask gunicorn getrstn
+RUN pip install flask gunicorn rstnpy
 
 WORKDIR /rstn_service
 ADD . /rstn_service
