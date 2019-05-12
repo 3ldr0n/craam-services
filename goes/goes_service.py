@@ -21,7 +21,7 @@ def goes_data():
     end = request.args["end"]
     try:
         tr = TimeRange(begin, end)
-    except:
+    except ValueError:
         return jsonify({"message": "Date error"}), 400
 
     results = Fido.search(attrs.Time(tr), attrs.Instrument("XRS"))

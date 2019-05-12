@@ -1,0 +1,50 @@
+# GOES
+
+** URL
+
+#+BEGIN_SRC
+/goes/get_data
+#+END_SRC
+
+** Método GET
+
+** Parâmetros
+
+#+BEGIN_SRC 
+begin = [datetime:YYYY-MM-DD HH:MM:SS]
+end = [datetime]
+#+END_SRC
+
+** Resposta de sucesso
+  
+*** Status: 200
+
+*** Conteúdo
+
+#+BEGIN_SRC json
+{
+  "xrsa" : {
+    "time_begin": "value",
+    "...": "...",
+    "time_end": "value",
+  },
+  "xrsb" : {
+    "time_begin": "value",
+    "...": "...",
+    "time_end": "value"
+  }
+}
+#+END_SRC
+ 
+** Resposta de erro
+
+*** Status: 500
+
+*** Conteúdo
+
+#+BEGIN_SRC json
+{
+  "message": "Date error"
+}
+#+END_SRC
+	

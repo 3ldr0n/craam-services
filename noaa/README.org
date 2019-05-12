@@ -1,0 +1,73 @@
+* NOAA
+
+** URL
+
+#+BEGIN_SRC
+/noaa_report/get_data
+#+END_SRC
+
+** Método GET
+
+** Parâmetros
+
+#+BEGIN_SRC 
+day = [int]
+month = [int]
+year = [int]
+#+END_SRC
+
+** Resposta de sucesso
+  
+*** Status: 200
+
+*** Conteúdo
+#+BEGIN_SRC json
+{
+  "event": {
+    "first_index": "value",
+    "...": "...",
+    "last_index": "value",
+  },
+  "begin": {"..."},
+  "max": {"..."},
+  "end": {"..."},
+  "obs": {"..."},
+  "Q": {"..."},
+  "type": {"..."},
+  "loc/frq": {"..."},
+  "particulars": {"..."},
+  "reg": {"..."}
+}
+#+END_SRC
+
+** Resposta de erro
+
+*** Status: 500
+
+*** Conteúdo
+
+#+BEGIN_SRC json
+{
+  "message": "File not found"
+}
+#+END_SRC
+	
+*** Status: 500
+
+*** Conteúdo
+
+#+BEGIN_SRC json
+{
+  "message": "No event reports"
+}
+#+END_SRC
+	
+*** Status: 400
+
+*** Conteúdo
+
+#+BEGIN_SRC json
+{
+  "message": "Impossible date"
+}
+#+END_SRC

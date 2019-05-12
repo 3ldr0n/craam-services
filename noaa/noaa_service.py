@@ -18,14 +18,13 @@ def get_data():
     day = request.args["day"]
     month = request.args["month"]
     year = request.args["year"]
-    station = request.args["station"]
 
     if not check_date(year, month, day):
         data = {"message": "Impossible date"}
         return jsonify(data), 400
 
     path = "reports/" + year + "_events/"
-    noaa = NoaaReport(year, month, day, path, station)
+    noaa = NoaaReport(year, month, day, path)
     try:
         noaa.get_dataframe()
         return Response(noaa.df.to_json(), mimetype="application/json")
