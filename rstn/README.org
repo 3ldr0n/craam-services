@@ -2,18 +2,20 @@
 
 ** URL
 
+#+BEGIN_SRC 
 /rstn/get_data
+#+END_SRC
 
 ** Método: GET
 
 ** Parâmetros
 
-   **Obrigatórios:**
- 
-   `day=[int]` <br />
-   `month=[int]`<br />
-   `year=[int]` <br />
-   `station=[str]`
+#+BEGIN_SRC 
+day = [int]
+month = [int]
+year = [int]
+station = [str]
+#+END_SRC
 
 ** Resposta de sucesso
   
