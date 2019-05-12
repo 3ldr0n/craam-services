@@ -1,0 +1,59 @@
+* RSTN
+
+** URL
+
+/rstn/get_data
+
+** Método: GET
+
+** Parâmetros
+
+   **Obrigatórios:**
+ 
+   `day=[int]` <br />
+   `month=[int]`<br />
+   `year=[int]` <br />
+   `station=[str]`
+
+** Resposta de sucesso
+  
+*** Status: 200
+
+*** Conteúdo
+
+#+BEGIN_SRC json
+{
+  "245": {
+    "time": "value",
+    "...": "...",
+  },
+  "410": {"..."},
+  "610": {"..."},
+  "1415": {"..."},
+  "2695": {"..."},
+  "4995": {"..."},
+  "8800": {"..."},
+  "15400": {"..."}
+}
+#+END_SRC
+ 
+** Resposta de erro
+
+*** Status: 400
+
+*** Conteúdo
+#+BEGIN_SRC json
+{
+  "message": "Impossible date"
+}
+#+END_SRC
+	
+*** Status: 500
+
+*** Conteúdo
+
+#+BEGIN_SRC json
+{
+  "message": "Internal error"
+}
+#+END_SRC
