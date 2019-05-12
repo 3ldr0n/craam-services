@@ -118,7 +118,8 @@ Microsserviços feitos para o CRAAM.
  
    `day=[int]` <br />
    `month=[int]`<br />
-   `year=[int]`
+   `year=[int]` <br />
+   `station=[str]`
 
 * **Resposta de sucesso:**
   
@@ -126,17 +127,17 @@ Microsserviços feitos para o CRAAM.
     **Conteúdo:**
 	```json	
 	{
-	  "f245": {
+	  "245": {
 	    "time": "value",
 	    "...": "...",
 	  },
-	  "f410": {"..."},
-	  "f610": {"..."},
-	  "f1415": {"..."},
-	  "f2695": {"..."},
-	  "f4995": {"..."},
-	  "f8800": {"..."},
-	  "f15400": {"..."}
+	  "410": {"..."},
+	  "610": {"..."},
+	  "1415": {"..."},
+	  "2695": {"..."},
+	  "4995": {"..."},
+	  "8800": {"..."},
+	  "15400": {"..."}
 	```
  
 * **Resposta de erro:**
