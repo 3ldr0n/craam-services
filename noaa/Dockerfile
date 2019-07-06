@@ -1,10 +1,14 @@
-FROM python:3.7-slim
+FROM python:3.7
 
-RUN pip install flask gunicorn noaareport
+ADD . /noaa
 
-WORKDIR /noaa_service
-ADD . /noaa_service
+WORKDIR /noaa
+
+# Fetch NOAA report files
+RUN cd reports && python grab-reports.py && cd ..
+
+RUN pip install -r requirements.txt
 
 EXPOSE 80
 
-CMD ["gunicorn", "-w", "4", "app:app", "-b", "0.0.0.0:80"]
+ENTRYPOINT ["gunicorn", "app:app", "-b", "0.0.0.0:80"]
