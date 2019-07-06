@@ -1,7 +1,6 @@
 from rstnpy import RSTN
 from rstnpy.exceptions import (
-    FileNotFoundOnServerError, InvalidDateError,
-    FileNotFoundError
+    FileNotFoundOnServerError, InvalidDateError
 )
 
 from flask import Blueprint, Response, request, jsonify

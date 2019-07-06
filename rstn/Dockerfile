@@ -1,9 +1,10 @@
 FROM python:3.7-slim
 
-RUN pip install flask gunicorn rstnpy
+ADD . /rstn
 
-WORKDIR /rstn_service
-ADD . /rstn_service
+WORKDIR /rstn
+
+RUN pip install -r requirements.txt
 
 EXPOSE 80
 
