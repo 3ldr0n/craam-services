@@ -1,3 +1,5 @@
+from requests import get
+from requests.exceptions import RequestException
 from rstnpy import RSTN
 from rstnpy.exceptions import (
     FileNotFoundOnServerError, InvalidDateError
@@ -14,10 +16,17 @@ def index():
     return jsonify(data)
 
 
-@rstn_page.route(
-    "/get_data/",
-    methods=["GET"]
-)
+@rstn_page.route("/health", methods=["GET"])
+def health():
+    try:
+        get("https://www.ngdc.noaa.gov/stp/space-weather/solar-data")
+        data = {"status": "UP"}
+    except RequestException:
+        data = {"status": "DOWN"}
+    return jsonify(data)
+
+
+@rstn_page.route("/get_data", methods=["GET"])
 def rstn_data():
     year = request.args["year"]
     month = request.args["month"]
