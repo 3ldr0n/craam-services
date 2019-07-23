@@ -5,7 +5,7 @@ ADD . /noaa
 WORKDIR /noaa
 
 # Fetch NOAA report files
-RUN cd reports && python grab-reports.py && cd ..
+RUN cd reports && python grab-reports.py
 
 RUN pip install -r requirements.txt
 

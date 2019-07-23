@@ -13,6 +13,15 @@ def index():
     return jsonify(data)
 
 
+@noaa_page.route("/health", methods=["GET"])
+def health():
+    try:
+        data = {"status": "UP"}
+    except Exception:
+        data = {"status": "DOWN"}
+    return jsonify(data)
+
+
 @noaa_page.route("/get_data", methods=["GET"])
 def get_data():
     day = request.args["day"]
