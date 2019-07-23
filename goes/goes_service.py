@@ -1,5 +1,7 @@
 from flask import Blueprint, Response, request, jsonify
 
+from requests import get
+from requests.exceptions import RequestException
 from sunpy.timeseries import TimeSeries
 from sunpy.time import TimeRange
 from sunpy.net import Fido, attrs
@@ -12,6 +14,16 @@ goes_page = Blueprint("goes", __name__)
 @goes_page.route("/", methods=["GET"])
 def index():
     data = {"message": "GOES Data"}
+    return jsonify(data)
+
+
+@goes_page.route("/health", methods=["GET"])
+def health():
+    try:
+        get("https://umbra.nascom.nasa.gov/goes/fits")
+        data = {"status": "UP"}
+    except RequestException:
+        data = {"status": "DOWN"}
     return jsonify(data)
 
 
