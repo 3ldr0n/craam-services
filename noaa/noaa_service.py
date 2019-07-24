@@ -22,12 +22,11 @@ def health():
     return jsonify(data)
 
 
-@noaa_page.route("/get_data", methods=["GET"])
-def get_data():
-    day = request.args["day"]
-    month = request.args["month"]
-    year = request.args["year"]
-
+@noaa_page.route(
+    "/get_data/<year>/<month>/<day>",
+    methods=["GET"]
+)
+def get_data(year, month, day):
     if not check_date(year, month, day):
         data = {"message": "Impossible date"}
         return jsonify(data), 400
@@ -38,6 +37,8 @@ def get_data():
         noaa.get_dataframe()
         return Response(noaa.df.to_json(), mimetype="application/json")
     except NoEventReports:
-        return jsonify({"message": "No event reports."}), 500
+        data = {"message": "No event reports."}
+        return jsonify(data), 500
     except FileNotFoundError:
-        return jsonify({"message": "File not found."}), 500
+        data = {"message": "File not found."}
+        return jsonify(data), 500
