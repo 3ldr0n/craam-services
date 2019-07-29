@@ -1,6 +1,6 @@
 from noaareport import NoaaReport, NoEventReports
 
-from flask import Blueprint, Response, request, jsonify
+from flask import Blueprint, Response, jsonify
 
 from utils import check_date
 
