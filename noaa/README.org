@@ -10,14 +10,19 @@
 
 ** Parâmetros
 
-#+BEGIN_SRC 
-day = [int]
-month = [int]
-year = [int]
+#+BEGIN_SRC
+get_data/ano/mes/dia
+ano, mes e dia = [int]
+#+END_SRC
+
+*** Exemplo
+
+#+BEGIN_SRC shell
+curl http://0.0.0.0:8080/noaa_report/get_data/2013/4/20
 #+END_SRC
 
 ** Resposta de sucesso
-  
+
 *** Status: 200
 
 *** Conteúdo

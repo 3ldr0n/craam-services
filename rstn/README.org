@@ -2,7 +2,7 @@
 
 ** URL
 
-#+BEGIN_SRC 
+#+BEGIN_SRC
 /rstn/get_data
 #+END_SRC
 
@@ -10,15 +10,21 @@
 
 ** Parâmetros
 
-#+BEGIN_SRC 
+#+BEGIN_SRC
 day = [int]
 month = [int]
 year = [int]
 station = [str]
 #+END_SRC
 
+*** Exemplo
+
+#+BEGIN_SRC shell
+curl http://0.0.0.0:8080/rstn/get_data/2015/10/2/sagamore%20hill
+#+END_SRC
+
 ** Resposta de sucesso
-  
+
 *** Status: 200
 
 *** Conteúdo
@@ -38,7 +44,7 @@ station = [str]
   "15400": {"..."}
 }
 #+END_SRC
- 
+
 ** Resposta de erro
 
 *** Status: 400
@@ -49,7 +55,7 @@ station = [str]
   "message": "Impossible date"
 }
 #+END_SRC
-	
+
 *** Status: 500
 
 *** Conteúdo
